@@ -1,3 +1,14 @@
-.spacing {
-    height: 400px;
+.weather-splash {
+    height: 500px;
+    margin-top: 90px;
+}
+
+.weather-box {
+    height: 450px;
+    border-right: 5px solid lightgray;
+    border-radius: 10px;
+}
+
+.feature-box {
+    height: 450px;
 }
