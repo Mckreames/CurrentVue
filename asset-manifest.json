@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Mckreames/Flavor_Forge/static/css/main.f855e6bc.css",
+    "main.js": "/Mckreames/Flavor_Forge/static/js/main.9845ae6a.js",
+    "static/js/453.7e36c231.chunk.js": "/Mckreames/Flavor_Forge/static/js/453.7e36c231.chunk.js",
+    "static/media/logo.svg": "/Mckreames/Flavor_Forge/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Mckreames/Flavor_Forge/index.html",
+    "main.f855e6bc.css.map": "/Mckreames/Flavor_Forge/static/css/main.f855e6bc.css.map",
+    "main.9845ae6a.js.map": "/Mckreames/Flavor_Forge/static/js/main.9845ae6a.js.map",
+    "453.7e36c231.chunk.js.map": "/Mckreames/Flavor_Forge/static/js/453.7e36c231.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.9845ae6a.js"
+  ]
+}
