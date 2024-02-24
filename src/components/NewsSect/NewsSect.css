@@ -1,0 +1,25 @@
+.news-head {
+    margin-top: 25px;
+    text-decoration: underline;
+    text-decoration-color: lightblue;
+}
+  
+.story {
+    margin: 20px;
+    height: 300px;
+    box-shadow: 5px 5px 8px lightblue;
+    border: 1px solid black;
+    border-radius: 10px;
+  
+}
+
+.news-head {
+    height: 70px;
+    margin: 0;
+    text-decoration: underline;
+}
+
+.news-head:hover {
+    cursor: pointer;
+    color: darkgray;
+}
