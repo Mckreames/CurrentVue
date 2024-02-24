@@ -1,6 +1,7 @@
 import React from 'react';
 import "./WeatherSplash.css";
 import Lottie from 'react-lottie';
+import lottie from 'lottie-web';
 import SunnyShowers from "../../imgs/lottie/sunny_showers.json"
 
 export default function WeatherSplash() {
@@ -9,23 +10,24 @@ export default function WeatherSplash() {
         loop: true,
         autoplay: true,
         animationData: SunnyShowers,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYmid slice',
-        },
+        // rendererSettings: {
+        //     preserveAspectRatio: 'xMidYmid slice',
+        // },
     };
+
 
   return (
     <section className="d-flex py-3 weather-splash">
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 weather-box">
-                <Lottie options={animationOptions} class="col-xl-5 weather-animation" alt="Sunny with showers" />
+                <Lottie options={animationOptions} className="col-xl-5 weather-animation" alt="Sunny with showers" />
             </div>
         </div>
-        <div className="d-flex flex-wrap align-items-center offset-1 col col-xl-3 summary-box">
+        <div className="d-flex flex-wrap align-items-center justify-content-center offset-1 col col-xl-3 summary-box">
             {/* <h2>Today's Weather Report</h2> */}
             <ul>
-                <li class="temp">58°</li>
+                <li className="temp">58°</li>
                 <li>Partly Cloudy-Chance of Showers</li>
                 <li>Knoxville, TN</li>
                 <li>Monday</li>

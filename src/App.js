@@ -4,6 +4,7 @@ import Banner from "./components/Banner/Banner";
 import WeatherSplash from "./components/WeatherSplash/WeatherSplash";
 import Divider from "./components/Divider/Divider";
 import NewsSect from "./components/NewsSect/NewsSect";
+import WeatherAPI from "./components/WeatherAPI/WeatherAPI";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
         <WeatherSplash />
         <Divider />
         <NewsSect />
+        <WeatherAPI />
       </main>
       <Footer />
     </div>

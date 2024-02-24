@@ -12,7 +12,7 @@ export default function NavBar() {
           CurrentVue
         </a>
         <form className="input-group w-25 me-5" role="search">
-          <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+          <input className="form-control" type="text" placeholder="Search..." aria-label="Search" />
           <button className="btn btn-outline-success" type="submit">Search</button>
         </form>
         <div className="offset-1"></div>
