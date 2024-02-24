@@ -23,6 +23,26 @@
 
 .summary-box {
     height: 450px;
+    padding: 0px 25px 20px;
+    box-shadow: 0px 0px 8px lightgray;
+    border-radius: 10px;
+}
+
+div > ul {
+    text-decoration: none !important;
+    text-align: center;
+}
+
+div > ul > li {
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none !important;
+    padding-top: 20px;
+}
+
+.temp {
+    font-size: 50px;
+    text-decoration: none;
 }
 
 .btn {
@@ -30,6 +50,7 @@
     color: black;
     font-weight: bold;
     font-size: 20px;
+    box-shadow: 1px 0px 3px gray;
 }
 
 .btn:hover {

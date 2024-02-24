@@ -23,9 +23,13 @@ export default function WeatherSplash() {
             </div>
         </div>
         <div className="d-flex flex-wrap align-items-center offset-1 col col-xl-3 summary-box">
-            <h2>Today's Weather Report</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis aliquam enim tenetur? Tenetur nisi blanditiis laudantium rerum? Esse ducimus deserunt temporibus, aspernatur quisquam ex, earum dolore incidunt at similique in minima adipisci tempora repellendus impedit labore molestiae veritatis, facere asperiores tempore ratione iure modi reiciendis. Illo nostrum iste nihil voluptas!
-            </p>
+            {/* <h2>Today's Weather Report</h2> */}
+            <ul>
+                <li class="temp">58-deg</li>
+                <li>Partly Cloudy-Chance of Showers</li>
+                <li>Knoxville, TN</li>
+                <li>Monday</li>
+            </ul>
             <button className=" btn col-5">Prev Day</button>
             <button className=" btn offset-2 col-5">Next Day</button>
             <button className="btn offset-1 col-10">Detailed Weather Report</button>
