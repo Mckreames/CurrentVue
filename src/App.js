@@ -14,8 +14,9 @@ function App() {
       </header>
       <main>
         <h1 className="d-flex justify-content-center home-head">
-          Weather Today, Your Way - Dive into CurrentVue's Visual Forecast!
+          Weather Today, Your Way!
         </h1>
+        <p>(today's date)</p>
         <WeatherSplash />
         <Divider />
         <NewsSect />
