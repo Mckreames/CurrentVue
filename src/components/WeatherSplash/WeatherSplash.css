@@ -9,14 +9,14 @@
 
 .weather-at-a-glance {
     height: 450px;
-    border-right: 5px solid lightgray;
+    /* border-right: 5px solid lightgray; */
     border-radius: 10px;
     margin-right: -40px;
 }
 
 .weather-box {
     height: 400px;
-    background: linear-gradient(90deg, rgba(173, 216, 230, 0.438) 70%, white);
+    background: linear-gradient(90deg, rgba(173, 216, 230, 0.274) 70%, white, rgba(161, 183, 190, 0.247));
     border-radius: 20px;
 }
 
