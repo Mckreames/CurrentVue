@@ -17,7 +17,7 @@ export default function WeatherSplash() {
   return (
     <section className="d-flex py-3 weather-splash">
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
-            <h1 className="row col-12 justify-content-center">Outside Your Window</h1>
+            <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 weather-box">
                 <Lottie options={animationOptions} class="col-xl-5 weather-animation" alt="Sunny with showers" />
             </div>
