@@ -1,25 +1,17 @@
-import logo from "./logo.svg";
+import logo from "./imgs/currentvue-favicon-color.png";
 import NavBar from "./components/NavBar/NavBar";
+import WeatherSplash from "./components/WeatherSplash/WeatherSplash";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <NavBar />
       </header>
+      <main>
+        <WeatherSplash />
+      </main>
     </div>
   );
 }
