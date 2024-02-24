@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="#top">
+        <a class="navbar-brand offset-1 me-auto" href="#top">
           <img src={logo} className="App-logo" alt="logo" />
           CurrentVue
         </a>

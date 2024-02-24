@@ -1,14 +1,45 @@
+:root {
+    --sun-yellow: #ffc05f;
+}
+
 .weather-splash {
     height: 500px;
     margin-top: 90px;
 }
 
-.weather-box {
+.weather-at-a-glance {
     height: 450px;
     border-right: 5px solid lightgray;
     border-radius: 10px;
+    margin-right: -40px;
 }
 
-.feature-box {
+.weather-box {
+    height: 400px;
+    background: linear-gradient(90deg, rgba(173, 216, 230, 0.438) 70%, white);
+    border-radius: 20px;
+}
+
+.summary-box {
     height: 450px;
+}
+
+.btn {
+    border: 3px solid var(--sun-yellow);
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #ffdca8;
+    cursor: pointer;
+    border-color: var(--sun-yellow);
+    
+}
+
+.btn:active {
+    background-color: var(--sun-yellow);
+    color: white;
+    border-color: var(--sun-yellow) !important;
 }
