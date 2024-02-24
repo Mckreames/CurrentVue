@@ -29,14 +29,14 @@
 }
 
 div > ul {
-    text-decoration: none !important;
+    list-style: none;
     text-align: center;
 }
 
 div > ul > li {
     font-weight: bold;
     font-size: 20px;
-    text-decoration: none !important;
+    list-style: none;
     padding-top: 20px;
 }
 

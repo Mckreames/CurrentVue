@@ -25,7 +25,7 @@ export default function WeatherSplash() {
         <div className="d-flex flex-wrap align-items-center offset-1 col col-xl-3 summary-box">
             {/* <h2>Today's Weather Report</h2> */}
             <ul>
-                <li class="temp">58-deg</li>
+                <li class="temp">58°</li>
                 <li>Partly Cloudy-Chance of Showers</li>
                 <li>Knoxville, TN</li>
                 <li>Monday</li>
