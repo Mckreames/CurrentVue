@@ -11,10 +11,11 @@ export default function NavBar() {
           <img src={logo} className="App-logo" alt="logo" />
           CurrentVue
         </a>
-        <form role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <form className="input-group w-25 me-5" role="search">
+          <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
           <button className="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <div className="offset-1"></div>
       </div>
     </nav>
   )

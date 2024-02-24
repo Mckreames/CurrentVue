@@ -1,5 +1,6 @@
 import logo from "./imgs/currentvue-favicon-color.png";
 import NavBar from "./components/NavBar/NavBar";
+import Banner from "./components/Banner/Banner";
 import WeatherSplash from "./components/WeatherSplash/WeatherSplash";
 import Divider from "./components/Divider/Divider";
 import NewsSect from "./components/NewsSect/NewsSect";
@@ -13,10 +14,7 @@ function App() {
         <NavBar />
       </header>
       <main>
-        <h1 className="d-flex justify-content-center home-head">
-          Weather Today, Your Way!
-        </h1>
-        <p>(today's date)</p>
+        <Banner />
         <WeatherSplash />
         <Divider />
         <NewsSect />

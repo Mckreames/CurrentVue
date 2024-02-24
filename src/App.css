@@ -38,11 +38,3 @@
     transform: rotate(360deg);
   }
 }
-
-h1 {
-  padding: 140px 0 30px 0;
-}
-
-.home-head {
-  background-color: rgba(49, 192, 218, 0.322);
-}
