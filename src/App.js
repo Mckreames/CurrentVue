@@ -19,7 +19,6 @@ function App() {
         <WeatherSplash />
         <Divider />
         <NewsSect />
-        <WeatherAPI />
       </main>
       <Footer />
     </div>

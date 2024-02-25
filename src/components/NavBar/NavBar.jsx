@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../imgs/currentvue-favicon-color.png'
 
 import "./NavBar.css";
 
-export default function NavBar() {
+export default function NavBar({ onSearch }) {
+  const [search, setSearch] = useState('');
+
+  const searchPressed = () => {
+    onSearch(search);
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
@@ -12,8 +18,9 @@ export default function NavBar() {
           CurrentVue
         </a>
         <form className="input-group w-25 me-5" role="search">
-          <input className="form-control" type="text" placeholder="Search..." aria-label="Search" />
-          <button className="btn btn-outline-success" type="submit">Search</button>
+          <input className="form-control" type="text" placeholder="Enter A City..." aria-label="Search" onChange={(e) => setSearch(e.target.value)}
+          />
+          <button className="btn btn-outline-success" type='submit' onClick={searchPressed}>Search</button>
         </form>
         <div className="offset-1"></div>
       </div>
