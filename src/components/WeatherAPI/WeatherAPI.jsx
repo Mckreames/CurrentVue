@@ -13,7 +13,7 @@ const WeatherAPI = ({ city }) => {
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
-          throw new Error('Search for a valid location');
+          throw ('Search for a valid location');
         }
 
         const result = await response.json();
@@ -41,11 +41,10 @@ const WeatherAPI = ({ city }) => {
         weatherData && (
           <div>
             <h1>{weatherData.name}</h1>
-            {/* <p>Temperature: {weatherData.main.temp} &deg;C</p> */}
             <p>Temperature: {fahrenheit()} &deg;F</p>
             <p>Humidity: {weatherData.main.humidity}</p>
             <p>Weather: {weatherData.weather[0].description}</p>
-            {/* Add more information based on the API response structure */}
+            <div className="d-none">{weatherData.weather.main}</div>
           </div>
         )
       )}

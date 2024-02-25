@@ -6,7 +6,8 @@ import "./NavBar.css";
 export default function NavBar({ onSearch }) {
   const [search, setSearch] = useState('');
 
-  const searchPressed = () => {
+  const searchPressed = (e) => {
+    e.preventDefault();
     onSearch(search);
   }
 
@@ -17,7 +18,7 @@ export default function NavBar({ onSearch }) {
           <img src={logo} className="App-logo" alt="logo" />
           CurrentVue
         </a>
-        <form className="input-group w-25 me-5" role="search">
+        <form className="input-group w-25 me-5" onSubmit={searchPressed} role="search">
           <input className="form-control" type="text" placeholder="Enter A City..." aria-label="Search" onChange={(e) => setSearch(e.target.value)}
           />
           <button className="btn btn-outline-success" type='submit' onClick={searchPressed}>Search</button>

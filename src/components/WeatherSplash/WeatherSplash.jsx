@@ -18,22 +18,23 @@ export default function WeatherSplash() {
         setCity(search);
     }
 
-    const weatherAnimationMapping = {
-        'Rain': Rain,
-        'Clear': Clear,
-        'Clouds': Clouds,
-        'Snow': Snow,
-        'Thunderstorm': Thunderstorm,
-      };      
+    // const weatherAnimationMapping = {
+    //     'Rain': Rain,
+    //     'Clear': Clear,
+    //     'Clouds': Clouds,
+    //     'Snow': Snow,
+    //     'Thunderstorm': Thunderstorm,
+    //   };      
 
-    // const animationOptions = {
-    //     loop: true,
-    //     autoplay: true,
-    //     animationData: weatherAnimationMapping[weatherData.weather[0].main] || Rain
-    //     // rendererSettings: {
-    //     //     preserveAspectRatio: 'xMidYmid slice',
-    //     // },
-    // };
+    const animationOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: Rain,
+        // animationData: weatherAnimationMapping[weatherData.weather[0].main] || Rain
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYmid slice',
+        },
+    };
 
 
   return (
@@ -42,17 +43,8 @@ export default function WeatherSplash() {
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 weather-box">
-            {weatherData && (
-            <Lottie
-                options={{
-                    loop: true,
-                    autoplay: true,
-                    animationData: weatherAnimationMapping[weatherData.weather[0].main] || Rain,
-            }}
-                className="col-xl-5 weather-animation"
-                alt="Weather Animation"
+            <Lottie options={animationOptions} className="col-xl-5 weather-animation" alt="Weather Animation"
             />
-            )}
             </div>
         </div>
         <div className="d-flex flex-wrap flex-column align-items-center justify-content-center offset-1 col col-xl-3 summary-box">
