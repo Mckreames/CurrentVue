@@ -5,6 +5,7 @@ import Rain from "../../imgs/lottie/sunny_showers.json";
 import Clear from "../../imgs/lottie/sun.json";
 import Clouds from "../../imgs/lottie/cloudy.json";
 import Snow from "../../imgs/lottie/snowy.json";
+import Thunderstorm from "../../imgs/lottie/thunder_showers.json";
 import WeatherAPI from "../WeatherAPI/WeatherAPI";
 import NavBar from "../NavBar/NavBar";
 
@@ -22,6 +23,7 @@ export default function WeatherSplash() {
         'Clear': Clear,
         'Clouds': Clouds,
         'Snow': Snow,
+        'Thunderstorm': Thunderstorm,
       };      
 
     // const animationOptions = {

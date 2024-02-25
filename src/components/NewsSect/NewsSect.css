@@ -2,12 +2,6 @@
     background-color: lightgray;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.315) inset;
 }
-
-.news-head {
-    margin-top: 25px;
-    text-decoration: underline;
-    text-decoration-color: lightblue;
-}
   
 .story {
     margin: 20px;
@@ -19,17 +13,31 @@
   
 }
 
-.news-head {
-    height: 45%;
-    margin: 0;
+.news-header {
     text-decoration: underline;
 }
 
-.news-header {
-
+.news-head {
+    padding-top: 10px;
+    height: 40%;
+    margin: 0;
+    border-bottom: 2px solid black;
 }
 
-.news-head:hover {
+.d {
+    padding-top: 10px;
+}
+
+.news-head > a {
+    color: black;
+    text-decoration: none;
+}
+
+.news-head > a:hover {
     cursor: pointer;
     color: darkgray;
+}
+
+.news-head:visited {
+    color: darkmagenta;
 }
