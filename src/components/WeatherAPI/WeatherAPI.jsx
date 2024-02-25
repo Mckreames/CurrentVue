@@ -18,6 +18,7 @@ const WeatherAPI = ({ city }) => {
 
         const result = await response.json();
         setWeatherData(result);
+        console.log(result);
       } catch (error) {
         setError(error.message);
       }

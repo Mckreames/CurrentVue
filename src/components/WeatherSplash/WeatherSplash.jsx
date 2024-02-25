@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./WeatherSplash.css";
 import Lottie from 'react-lottie';
 import Rain from "../../imgs/lottie/sunny_showers.json";
@@ -13,10 +13,39 @@ import NavBar from "../NavBar/NavBar";
 export default function WeatherSplash() {
     const [city, setCity] = useState('Knoxville');
     const [weatherData, setWeatherData] = useState(null);
+    const [weatherIcon, setWeatherIcon] = useState(Rain);
+    const [error, setError] = useState(null);
 
     const handleSearch = (search) => {
         setCity(search);
     }
+
+    useEffect(() => {
+        const apiKey = 'e9afe9e234a1e13792df43eca9f930c4';
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    
+        const fetchData = async () => {
+          try {
+            const response = await fetch(apiUrl);
+    
+            if (!response.ok) {
+              throw ('Search for a valid location');
+            }
+    
+            const result = await response.json();
+            setWeatherData(result);
+            console.log(result);
+          } catch (error) {
+            setError(error.message);
+          }
+        };
+
+        const currWeatherIcon = () => {
+            setWeatherIcon(result.data.weather.main);
+        }
+        
+        fetchData();
+    }, [city]);
 
     // const weatherAnimationMapping = {
     //     'Rain': Rain,
@@ -29,7 +58,7 @@ export default function WeatherSplash() {
     const animationOptions = {
         loop: true,
         autoplay: true,
-        animationData: Rain,
+        animationData: currWeatherIcon,
         // animationData: weatherAnimationMapping[weatherData.weather[0].main] || Rain
         rendererSettings: {
             preserveAspectRatio: 'xMidYmid slice',
