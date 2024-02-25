@@ -43,7 +43,7 @@ const WeatherAPI = ({ city }) => {
           <div>
             <h1>{weatherData.name}</h1>
             <p>Temperature: {fahrenheit()} &deg;F</p>
-            <p>Humidity: {weatherData.main.humidity}</p>
+            <p>Humidity: {weatherData.main.humidity}%</p>
             <p>Weather: {weatherData.weather[0].description}</p>
             <div className="d-none">{weatherData.weather.main}</div>
           </div>
