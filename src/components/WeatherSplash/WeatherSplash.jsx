@@ -58,7 +58,7 @@ export default function WeatherSplash() {
     const animationOptions = {
         loop: true,
         autoplay: true,
-        animationData: Clouds,
+        animationData: Rain,
         // animationData: currWeatherIcon,
         // animationData: weatherAnimationMapping[weatherData.weather[0].main] || Rain
         rendererSettings: {

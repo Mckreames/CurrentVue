@@ -21,15 +21,15 @@ export default function NavBar({ onSearch }) {
               CurrentVue
             </a>
           </li>
-          <li class="nav-item dropdown">
-          <a class="nav-link ms-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className="nav-item dropdown">
+          <a className="nav-link ms-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Saved Locations
           </a>
-          <ul class="dropdown-menu navbar-nav">
-            <li><a class="dropdown-item" href="#">Knoxville</a></li>
-            <li><a class="dropdown-item" href="#">Morristown</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Paris</a></li>
+          <ul className="dropdown-menu navbar-nav">
+            <li><a className="dropdown-item" href="#">Knoxville</a></li>
+            <li><a className="dropdown-item" href="#">Morristown</a></li>
+            <li><hr className="dropdown-divider" /></li>
+            <li><a className="dropdown-item" href="#">Paris</a></li>
           </ul>
         </li>
         </ul>
