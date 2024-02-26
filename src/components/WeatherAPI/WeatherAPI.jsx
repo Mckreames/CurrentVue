@@ -45,10 +45,10 @@ const WeatherAPI = ({ city }) => {
             <p>Temperature: {fahrenheit()} &deg;F</p>
             <p>Humidity: {weatherData.main.humidity}%</p>
             <p>Weather: {weatherData.weather[0]?.description}</p>
-            {weatherData.weather && (
+            {/* {weatherData.weather && (
               <WeatherSplash weatherIcon={weatherData.weather[0].main} />
-            )}
-            {/* <div className="d-none"><WeatherSplash weatherIcon={weatherData.weather[0].main} /></div> */}
+            )} */}
+            <div className="d-none"><WeatherSplash weatherIcon={weatherData.weather[0].main} /></div>
           </div>
         )
       )}
