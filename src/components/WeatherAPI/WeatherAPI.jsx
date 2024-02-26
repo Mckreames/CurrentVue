@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WeatherSplash from '../WeatherSplash/WeatherSplash';
 
 const WeatherAPI = ({ city }) => {
   const [weatherData, setWeatherData] = useState(null);
@@ -18,7 +19,6 @@ const WeatherAPI = ({ city }) => {
 
         const result = await response.json();
         setWeatherData(result);
-        console.log(result);
       } catch (error) {
         setError(error.message);
       }
@@ -44,8 +44,11 @@ const WeatherAPI = ({ city }) => {
             <h1>{weatherData.name}</h1>
             <p>Temperature: {fahrenheit()} &deg;F</p>
             <p>Humidity: {weatherData.main.humidity}%</p>
-            <p>Weather: {weatherData.weather[0].description}</p>
-            <div className="d-none">{weatherData.weather.main}</div>
+            <p>Weather: {weatherData.weather[0]?.description}</p>
+            {weatherData.weather && (
+              <WeatherSplash weatherIcon={weatherData.weather[0].main} />
+            )}
+            {/* <div className="d-none"><WeatherSplash weatherIcon={weatherData.weather[0].main} /></div> */}
           </div>
         )
       )}
