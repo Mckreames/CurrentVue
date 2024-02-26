@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Mckreames/Flavor_Forge/static/css/main.25f51f16.css",
-    "main.js": "/Mckreames/Flavor_Forge/static/js/main.c72150d2.js",
-    "static/js/453.f2b70bc2.chunk.js": "/Mckreames/Flavor_Forge/static/js/453.f2b70bc2.chunk.js",
-    "index.html": "/Mckreames/Flavor_Forge/index.html",
-    "main.25f51f16.css.map": "/Mckreames/Flavor_Forge/static/css/main.25f51f16.css.map",
-    "main.c72150d2.js.map": "/Mckreames/Flavor_Forge/static/js/main.c72150d2.js.map",
-    "453.f2b70bc2.chunk.js.map": "/Mckreames/Flavor_Forge/static/js/453.f2b70bc2.chunk.js.map"
+    "main.css": "/Mckreames/CurrentVue/static/css/main.25f51f16.css",
+    "main.js": "/Mckreames/CurrentVue/static/js/main.dbda7829.js",
+    "static/js/453.f2b70bc2.chunk.js": "/Mckreames/CurrentVue/static/js/453.f2b70bc2.chunk.js",
+    "index.html": "/Mckreames/CurrentVue/index.html",
+    "main.25f51f16.css.map": "/Mckreames/CurrentVue/static/css/main.25f51f16.css.map",
+    "main.dbda7829.js.map": "/Mckreames/CurrentVue/static/js/main.dbda7829.js.map",
+    "453.f2b70bc2.chunk.js.map": "/Mckreames/CurrentVue/static/js/453.f2b70bc2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.25f51f16.css",
-    "static/js/main.c72150d2.js"
+    "static/js/main.dbda7829.js"
   ]
 }
