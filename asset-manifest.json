@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/Mckreames/CurrentVue/static/css/main.25f51f16.css",
-    "main.js": "/Mckreames/CurrentVue/static/js/main.dbda7829.js",
-    "static/js/453.f2b70bc2.chunk.js": "/Mckreames/CurrentVue/static/js/453.f2b70bc2.chunk.js",
+    "main.css": "/Mckreames/CurrentVue/static/css/main.4a82e635.css",
+    "main.js": "/Mckreames/CurrentVue/static/js/main.d5115ce7.js",
+    "static/media/currentvue-high-resolution-logo-transparent.png": "/Mckreames/CurrentVue/static/media/currentvue-high-resolution-logo-transparent.da3e41e45a03df79ff23.png",
     "index.html": "/Mckreames/CurrentVue/index.html",
-    "main.25f51f16.css.map": "/Mckreames/CurrentVue/static/css/main.25f51f16.css.map",
-    "main.dbda7829.js.map": "/Mckreames/CurrentVue/static/js/main.dbda7829.js.map",
-    "453.f2b70bc2.chunk.js.map": "/Mckreames/CurrentVue/static/js/453.f2b70bc2.chunk.js.map"
+    "main.4a82e635.css.map": "/Mckreames/CurrentVue/static/css/main.4a82e635.css.map",
+    "main.d5115ce7.js.map": "/Mckreames/CurrentVue/static/js/main.d5115ce7.js.map"
   },
   "entrypoints": [
-    "static/css/main.25f51f16.css",
-    "static/js/main.dbda7829.js"
+    "static/css/main.4a82e635.css",
+    "static/js/main.d5115ce7.js"
   ]
 }
