@@ -27,10 +27,10 @@ export default function WeatherSplash(props) {
     const animationOptions = {
         loop: true,
         autoplay: true,
-        animationData: weatherIcon || Logo,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYmid slice',
-        },
+        animationData: Rain,
+        // rendererSettings: {
+        //     preserveAspectRatio: 'xMidYmid slice',
+        // },
     };
     console.log(weatherIcon);
 
@@ -41,11 +41,12 @@ export default function WeatherSplash(props) {
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 d-flex align-items-center weather-box">
-                <img src={Logo} className="app-logo w-100" alt="logo" />
-                {/* <ErrorBoundary> */}
-                    {/* <Lottie options={animationOptions} className="col-xl-5 weather-animation" alt="Weather Animation"
-                    /> */}
-                {/* </ErrorBoundary> */}
+                {/* <img className="app-logo w-100" alt="logo" /> */}
+                    <Lottie 
+                        options={animationOptions} 
+                        className="col-xl-5 weather-animation" 
+                        alt="Weather Animation"
+                    />
             </div>
         </div>
         <div className="d-flex flex-wrap flex-column align-items-center justify-content-center offset-1 col col-xl-3 summary-box">
