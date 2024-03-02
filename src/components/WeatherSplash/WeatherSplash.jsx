@@ -9,35 +9,48 @@ import Snow from "../../imgs/lottie/snowy.json";
 import Thunderstorm from "../../imgs/lottie/thunder_showers.json";
 import WeatherAPI from "../WeatherAPI/WeatherAPI";
 import NavBar from "../NavBar/NavBar";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
 
-export default function WeatherSplash(props) {
-    const { weatherIcon } = props;
-    const [city, setCity] = useState('Welcome');
-    // const [weatherData, setWeatherData] = useState(null);
+export default function WeatherSplash({ weatherData }) {
     // const [weatherIcon, setWeatherIcon] = useState(Rain);
+    const [error, setError] = useState(null);
+    console.log(weatherData);
     
-    const handleSearch = (search) => {
-        setCity(search);
-    }
+    // useEffect(() => {
+    // let stupidWorkAround = () => {
+    //     for (let x = 0; x <= 2; x++) {
+    //         setTimeout(() => {
+    //             setWeatherIcon(weatherData.weather[0].main);
+    //         }, 500);
+    //         if(weatherIcon === null) {
+    //             weatherIcon = Rain;
+    //             return weatherIcon;
+    //         } else {
+    //             return weatherIcon;
+    //         }
+    //     }
+    // };
 
-    let weatherPic = weatherIcon; 
-    
     const animationOptions = {
         loop: true,
         autoplay: true,
-        animationData: Rain,
+        animationData:  Rain,
         // rendererSettings: {
         //     preserveAspectRatio: 'xMidYmid slice',
         // },
     };
-    console.log(weatherIcon);
+    // }, [weatherIcon, ]);
 
+    let fahrenheit = () => {
+        let kelvin = weatherData.main.temp;
+        let celciusTemp = kelvin - 273.15;
+        let fahrenheitTemp = ((celciusTemp * 9 / 5) + 32).toFixed(1);
+        return fahrenheitTemp;
+      }
 
   return (
     <section className="d-flex align-items-center py-3 weather-splash">
-        <NavBar onSearch={handleSearch} />
+        <NavBar />
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 d-flex align-items-center weather-box">
@@ -50,7 +63,20 @@ export default function WeatherSplash(props) {
             </div>
         </div>
         <div className="d-flex flex-wrap flex-column align-items-center justify-content-center offset-1 col col-xl-3 summary-box">
-            <WeatherAPI city={city} />
+        <div>
+      {error ? (
+        <div>Error: {error}</div>
+      ) : (
+        weatherData && (
+          <div>
+            <h1>{weatherData.name}</h1>
+            <p>Temperature: {fahrenheit()} &deg;F</p>
+            <p>Humidity: {weatherData.main.humidity}%</p>
+            <p>Weather: {weatherData.weather[0]?.description}</p>
+          </div>
+        )
+      )}
+    </div>
             <div className="d-flex flex-wrap justify-content-center">
                 <button className=" btn offset-1 col-5">Prev Day</button>
                 <button className=" btn col-5">Next Day</button>

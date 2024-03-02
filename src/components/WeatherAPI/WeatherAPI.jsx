@@ -5,27 +5,27 @@ const WeatherAPI = ({ city }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const apiKey = 'e9afe9e234a1e13792df43eca9f930c4';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  // useEffect(() => {
+  //   const apiKey = 'e9afe9e234a1e13792df43eca9f930c4';
+  //   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(apiUrl);
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(apiUrl);
 
-        if (!response.ok) {
-          throw ('Search for a valid location');
-        }
+  //       if (!response.ok) {
+  //         throw ('Search for a valid location');
+  //       }
 
-        const result = await response.json();
-        setWeatherData(result);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
+  //       const result = await response.json();
+  //       setWeatherData(result);
+  //     } catch (error) {
+  //       setError(error.message);
+  //     }
+  //   };
 
-    fetchData();
-  }, [city]);
+  //   fetchData();
+  // }, [city]);
 
   let fahrenheit = () => {
     let kelvin = weatherData.main.temp;
