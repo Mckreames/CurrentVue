@@ -5,7 +5,7 @@ export default function NewsSect() {
   return (
     <section className="background-color">
         <div>
-            <h2 className="d-flex justify-content-center pt-5 news-header">News Close~ish To You</h2>
+            <h2 className="d-flex justify-content-center pt-5 news-header">News Around The World</h2>
         </div>
         <div className="row mt-4 pb-5 d-flex justify-content-center">
             <div className="story story1 col-3 offset-1 text-center">
