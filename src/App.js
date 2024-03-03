@@ -11,7 +11,9 @@ import "./App.css";
 function App() {
   const [city, setCity] = useState("Knoxville");
   const [weatherData, setWeatherData] = useState("");
-  const [weatherIcon, setWeatherIcon] = useState("Rain");
+  const [weatherIcon, setWeatherIcon] = useState("");
+
+  // const weather = [0];
 
   useEffect(() => {
     const apiKey = "e9afe9e234a1e13792df43eca9f930c4";
@@ -23,16 +25,25 @@ function App() {
 
         if (!response.ok) {
           throw "Search for a valid location";
+        } else {
+          const result = await response.json();
+          // console.log(result);
+          setWeatherData(result);
         }
-        const result = await response.json();
-        setWeatherData(result);
       } catch (error) {
-        console.log("This don't look right, chief...");
+        console.log("This don't look right, Chief...");
       }
     };
 
     fetchData();
   }, [city]);
+
+  useEffect(() => {
+    if (weatherData?.weather && weatherData.weather.length > 0) {
+      setWeatherIcon(weatherData.weather[0].main);
+      console.log(weatherData.weather[0].main);
+    }
+  }, [weatherData]);
 
   const handleSearch = (search) => {
     setCity(search);
@@ -45,7 +56,7 @@ function App() {
       </header>
       <main>
         <Banner />
-        <WeatherSplash weatherData={weatherData} />
+        <WeatherSplash weatherData={weatherData} weatherIcon={weatherIcon} />
         <Divider />
         <NewsSect />
       </main>

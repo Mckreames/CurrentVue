@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import "./WeatherSplash.css";
 import Logo from "../../imgs/currentvue-high-resolution-logo-transparent.png"
-import Lottie from 'react-lottie';
-import Rain from "../../imgs/lottie/sunny_showers.json";
-import Clear from "../../imgs/lottie/sun.json";
-import Clouds from "../../imgs/lottie/cloudy.json";
-import Snow from "../../imgs/lottie/snowy.json";
-import Thunderstorm from "../../imgs/lottie/thunder_showers.json";
+// import Lottie from 'react-lottie';
+import Rain from "../../imgs/clipart_inferiors/rain.png";
+import Clear from "../../imgs/clipart_inferiors/sun.png";
+import Clouds from "../../imgs/clipart_inferiors/cloudy.png";
+import Snow from "../../imgs/clipart_inferiors/snow.png";
+import Thunderstorm from "../../imgs/clipart_inferiors/thunder.png";
+// import Rain from "../../imgs/lottie/sunny_showers.json";
+// import Clear from "../../imgs/lottie/sun.json";
+// import Clouds from "../../imgs/lottie/cloudy.json";
+// import Snow from "../../imgs/lottie/snowy.json";
+// import Thunderstorm from "../../imgs/lottie/thunder_showers.json";
 import WeatherAPI from "../WeatherAPI/WeatherAPI";
 import NavBar from "../NavBar/NavBar";
 
 
-export default function WeatherSplash({ weatherData }) {
+export default function WeatherSplash({ weatherData, weatherIcon }) {
     // const [weatherIcon, setWeatherIcon] = useState(Rain);
     const [error, setError] = useState(null);
-    console.log(weatherData);
-    
+    console.log("Weather Data", weatherData);
+    console.log("Weather Icon", weatherIcon);
+
     // useEffect(() => {
     // let stupidWorkAround = () => {
     //     for (let x = 0; x <= 2; x++) {
@@ -31,15 +37,22 @@ export default function WeatherSplash({ weatherData }) {
     //     }
     // };
 
-    const animationOptions = {
-        loop: true,
-        autoplay: true,
-        animationData:  Rain,
-        // rendererSettings: {
-        //     preserveAspectRatio: 'xMidYmid slice',
-        // },
-    };
+    // const animationOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData:  Rain,
+    //     rendererSettings: {
+    //         preserveAspectRatio: 'xMidYmid slice',
+    //     },
+    // };
     // }, [weatherIcon, ]);
+    const weatherOptions = {
+        "Rain": Rain,
+        "Clear": Clear,
+        "Cloud": Clouds,
+        "Snow": Snow,
+        "Thunderstorm": Thunderstorm,
+    }
 
     let fahrenheit = () => {
         let kelvin = weatherData.main.temp;
@@ -54,12 +67,18 @@ export default function WeatherSplash({ weatherData }) {
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 d-flex align-items-center weather-box">
+                <img
+                    // src={weatherOptions[weatherIcon]}
+                    src={Clear}
+                    className="weather-img"
+                    alt="Weather Image"
+                />
                 {/* <img className="app-logo w-100" alt="logo" /> */}
-                    <Lottie 
+                    {/* <Lottie 
                         options={animationOptions} 
                         className="col-xl-5 weather-animation" 
                         alt="Weather Animation"
-                    />
+                    /> */}
             </div>
         </div>
         <div className="d-flex flex-wrap flex-column align-items-center justify-content-center offset-1 col col-xl-3 summary-box">

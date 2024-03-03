@@ -28,6 +28,25 @@
     box-shadow: 5px 5px 8px lightblue;
 }
 
+.weather-img {
+    object-fit: fill;
+    margin: 0 auto;
+    width: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
 .summary-box {
     height: 350px;
     padding: 0px 25px 20px;

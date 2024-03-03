@@ -15,7 +15,7 @@ nav {
   font-size: 30px;
 }
 
-img {
+.App-logo {
   margin-right: 3%;
   padding: 7px;
   border: 2px solid var(--sun-yellow);
