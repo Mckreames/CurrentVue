@@ -3,17 +3,16 @@ import logo from "./imgs/currentvue-favicon-color.png";
 import NavBar from "./components/NavBar/NavBar";
 import Banner from "./components/Banner/Banner";
 import WeatherSplash from "./components/WeatherSplash/WeatherSplash";
+import Logo from "./imgs/currentvue-high-resolution-logo-transparent.png";
 import Divider from "./components/Divider/Divider";
 import NewsSect from "./components/NewsSect/NewsSect";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
-  const [city, setCity] = useState("Knoxville");
+  const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState("");
-  const [weatherIcon, setWeatherIcon] = useState("");
-
-  // const weather = [0];
+  const [weatherIcon, setWeatherIcon] = useState("CurrentVue");
 
   useEffect(() => {
     const apiKey = "e9afe9e234a1e13792df43eca9f930c4";
@@ -41,7 +40,6 @@ function App() {
   useEffect(() => {
     if (weatherData?.weather && weatherData.weather.length > 0) {
       setWeatherIcon(weatherData.weather[0].main);
-      console.log(weatherData.weather[0].main);
     }
   }, [weatherData]);
 

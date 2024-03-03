@@ -8,6 +8,7 @@ export default function NavBar({ onSearch }) {
 
   const searchPressed = (e) => {
     e.preventDefault();
+    // console.log("Button Pressed")
     onSearch(search);
   }
 
