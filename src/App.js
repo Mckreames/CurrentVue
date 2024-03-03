@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Welcome");
   const [weatherData, setWeatherData] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("CurrentVue");
 
