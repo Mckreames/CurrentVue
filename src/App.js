@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
-  const [city, setCity] = useState();
+  const [city, setCity] = useState("Knoxville");
   const [weatherData, setWeatherData] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("CurrentVue");
 
@@ -50,10 +50,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar onSearch={handleSearch} />
+        <NavBar onSearch={handleSearch} weatherIcon={weatherIcon} />
       </header>
       <main>
-        <Banner />
+        <Banner weatherIcon={weatherIcon} />
+        {/* <Divider /> */}
         <WeatherSplash weatherData={weatherData} weatherIcon={weatherIcon} />
         <Divider />
         <NewsSect />

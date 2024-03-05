@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 import logo from '../../imgs/currentvue-favicon-color.png';
 
 import "./NavBar.css";
 
-export default function NavBar({ onSearch }) {
+export default function NavBar({ onSearch, shadowColor }) {
   const [search, setSearch] = useState('');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleSavedLocationClick = (location) => {
+    onSearch(location);
+    setDropdownOpen(false);
+  };
 
   const searchPressed = (e) => {
     e.preventDefault();
-    // console.log("Button Pressed")
+    // console.log("It's LIT!")
     onSearch(search);
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
       <div className="container-fluid">
         <ul className="me-auto d-flex align-items-center">
           <li>
@@ -22,29 +34,24 @@ export default function NavBar({ onSearch }) {
               CurrentVue
             </a>
           </li>
-          {/* <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={direction}>
-            <DropdownToggle caret>Dropdown</DropdownToggle>
-            <DropdownMenu {...args}>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem>Some Action</DropdownItem>
-              <DropdownItem text>Dropdown Item Text</DropdownItem>
-              <DropdownItem disabled>Action (disabled)</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Foo Action</DropdownItem>
-              <DropdownItem>Bar Action</DropdownItem>
-              <DropdownItem>Quo Action</DropdownItem>
-            </DropdownMenu>
-          </Dropdown> */}
-          <li className="nav-item dropdown">
-            <a className="nav-link ms-5 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Saved Locations
-            </a>
-            <ul className="dropdown-menu navbar-nav">
-              <li><a className="dropdown-item" href="#">Knoxville</a></li>
-              <li><a className="dropdown-item" href="#">Morristown</a></li>
-              <li><hr className="dropdown-divider" /></li>
-              <li><a className="dropdown-item" href="#">Paris</a></li>
-            </ul>
+          <li className="nav-item offset-1 dropdown">
+          <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+              <DropdownToggle caret style={{ backgroundColor: 'white', color: 'black' }}>
+                Saved Locations
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={() => handleSavedLocationClick('Knoxville')}>
+                  Knoxville
+                </DropdownItem>
+                <DropdownItem onClick={() => handleSavedLocationClick('Morristown')}>
+                  Morristown
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => handleSavedLocationClick('Paris')}>
+                  Paris
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </li>
         </ul>
           <form className="input-group w-25 me-5" onSubmit={searchPressed} role="search">

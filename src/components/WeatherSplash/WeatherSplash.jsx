@@ -21,6 +21,7 @@ import NavBar from "../NavBar/NavBar";
 export default function WeatherSplash({ weatherData, weatherIcon }) {
     const [shadowColor, setShadowColor] = useState("lightblue");
     const [error, setError] = useState(null);
+    const [favorites, setFavorites] = useState("");
 
     
 
@@ -53,11 +54,15 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
 
     }
 
+    useEffect(() => {
+        handleChangeColor();
+    }, [weatherIcon])
+
     const weatherOptions = {
         "Rain": Rain,
         "Drizzle": Rain,
         "Clear": Clear,
-        "Cloud": Clouds,
+        "Clouds": Clouds,
         "Snow": Snow,
         "Thunderstorm": Thunderstorm,
         "Mist": Mist,
@@ -79,8 +84,6 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
         return fahrenheitTemp;
     }
 
-    console.log(weatherIcon);
-
     if (!weatherIcon) {
         weatherIcon = "CurrentVue";
         weatherData.name = "Welcome";
@@ -88,9 +91,14 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
         // weatherData.weather[0]?.description = "Your Way";
     }
 
+    let addFavorite = () => {
+        setFavorites(...favorites, weatherData.name);
+        console.log(favorites);
+    };
+
   return (
     <section className="d-flex align-items-center py-3 weather-splash">
-        <NavBar />
+        <NavBar shadowColor={shadowColor}/>
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 d-flex align-items-center weather-box" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
@@ -108,7 +116,7 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
                     /> */}
             </div>
         </div>
-        <div className="d-flex flex-wrap flex-column align-items-center justify-content-center offset-1 col col-xl-3 summary-box">
+        <div className="d-flex flex-wrap flex-column align-items-center justify-content-center offset-1 col col-xl-3 summary-box" style={{ boxShadow: `0px 0px 15px ${shadowColor}` }}>
         <div>
       {error ? (
         <div>Error: {error}</div>
@@ -124,9 +132,9 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
       )}
     </div>
             <div className="d-flex flex-wrap justify-content-center">
-                <button className=" btn offset-1 col-5">Prev Day</button>
-                <button className=" btn col-5">Next Day</button>
-                <button className="btn offset-1 col-10">Detailed Weather Report</button>
+                {/* <button className=" btn offset-1 col-5">Prev Day</button>
+                <button className=" btn col-5">Next Day</button> */}
+                <button className="btn col" onClick={addFavorite}>Save to Favorites</button>
             </div>
         </div>
     </section>
