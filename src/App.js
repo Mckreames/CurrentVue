@@ -9,6 +9,14 @@ import NewsSect from "./components/NewsSect/NewsSect";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
+function getInitialState() {
+  let savedState = localStorage.getItem("items");
+  if (typeof savedState === "string") {
+    return JSON.parse(savedState);
+  }
+  return [];
+}
+
 function App() {
   const [city, setCity] = useState("Knoxville");
   const [weatherData, setWeatherData] = useState("");

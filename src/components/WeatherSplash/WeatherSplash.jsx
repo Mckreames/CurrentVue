@@ -21,7 +21,7 @@ import NavBar from "../NavBar/NavBar";
 export default function WeatherSplash({ weatherData, weatherIcon }) {
     const [shadowColor, setShadowColor] = useState("lightblue");
     const [error, setError] = useState(null);
-    const [favorites, setFavorites] = useState("");
+    const [favorites, setFavorites] = useState([]);
 
     
 
@@ -92,8 +92,10 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
     }
 
     let addFavorite = () => {
-        setFavorites(...favorites, weatherData.name);
-        console.log(favorites);
+        setFavorites((...favorites) => [
+        weatherData.name,
+        weatherIcon,
+        ])
     };
 
   return (
