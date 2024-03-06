@@ -92,15 +92,15 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
     }
 
     let addFavorite = () => {
-        setFavorites((...favorites) => [
-        weatherData.name,
-        weatherIcon,
+        setFavorites((favorites) => [
+            ...favorites,
+            [weatherData.name, weatherIcon]
         ])
     };
 
   return (
     <section className="d-flex align-items-center py-3 weather-splash">
-        <NavBar shadowColor={shadowColor}/>
+        <NavBar shadowColor={shadowColor} favorites={favorites}/>
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 d-flex align-items-center weather-box" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
@@ -108,7 +108,7 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
                     src={weatherOptions[weatherIcon]}
                     // src={Snow}
                     className="weather-img"
-                    alt="Weather Image"
+                    alt="Weather Icon"
                 />
                 {/* <img className="app-logo w-100" alt="logo" /> */}
                     {/* <Lottie 

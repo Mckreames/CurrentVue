@@ -52,6 +52,7 @@ function App() {
   }, [weatherData]);
 
   const handleSearch = (search) => {
+    console.log("search");
     setCity(search);
   };
 

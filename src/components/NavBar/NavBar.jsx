@@ -5,7 +5,7 @@ import logo from '../../imgs/currentvue-favicon-color.png';
 
 import "./NavBar.css";
 
-export default function NavBar({ onSearch, shadowColor }) {
+export default function NavBar({ favorites, onSearch, shadowColor }) {
   const [search, setSearch] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -20,7 +20,7 @@ export default function NavBar({ onSearch, shadowColor }) {
 
   const searchPressed = (e) => {
     e.preventDefault();
-    // console.log("It's LIT!")
+    console.log(search);
     onSearch(search);
   }
 
@@ -57,10 +57,12 @@ export default function NavBar({ onSearch, shadowColor }) {
           <form className="input-group w-25 me-5" onSubmit={searchPressed} role="search">
             <input className="form-control" type="text" placeholder="Enter A City..." aria-label="Search" onChange={(e) => setSearch(e.target.value)}
             />
-            <button className="btn btn-outline-success" type='submit' onClick={searchPressed}>Search</button>
+            <button className="btn btn-outline-success" type='submit'>Search</button>
           </form>
           <div className="offset-1"></div>
       </div>
     </nav>
   )
 }
+
+// onClick={searchPressed}
