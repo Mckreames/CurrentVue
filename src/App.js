@@ -9,8 +9,16 @@ import NewsSect from "./components/NewsSect/NewsSect";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
+function getInitialState() {
+  let savedState = localStorage.getItem("items");
+  if (typeof savedState === "string") {
+    return JSON.parse(savedState);
+  }
+  return [];
+}
+
 function App() {
-  const [city, setCity] = useState();
+  const [city, setCity] = useState("Knoxville");
   const [weatherData, setWeatherData] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("Welcome");
 
@@ -43,16 +51,18 @@ function App() {
   }, [weatherData]);
 
   const handleSearch = (search) => {
+    console.log("search");
     setCity(search);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar onSearch={handleSearch} />
+        <NavBar onSearch={handleSearch} weatherIcon={weatherIcon} />
       </header>
       <main>
-        <Banner />
+        <Banner weatherIcon={weatherIcon} />
+        {/* <Divider /> */}
         <WeatherSplash weatherData={weatherData} weatherIcon={weatherIcon} />
         <Divider />
         <NewsSect />
