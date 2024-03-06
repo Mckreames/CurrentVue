@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   const [city, setCity] = useState();
   const [weatherData, setWeatherData] = useState("");
-  const [weatherIcon, setWeatherIcon] = useState("CurrentVue");
+  const [weatherIcon, setWeatherIcon] = useState("Welcome");
 
   useEffect(() => {
     const apiKey = "e9afe9e234a1e13792df43eca9f930c4";
@@ -26,7 +26,6 @@ function App() {
           throw "Search for a valid location";
         } else {
           const result = await response.json();
-          // console.log(result);
           setWeatherData(result);
         }
       } catch (error) {
