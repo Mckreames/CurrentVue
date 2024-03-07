@@ -9,6 +9,7 @@ import NewsSect from "./components/NewsSect/NewsSect";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
+// Local State
 function getInitialState() {
   let savedState = localStorage.getItem("items");
   if (typeof savedState === "string") {
@@ -22,6 +23,7 @@ function App() {
   const [weatherData, setWeatherData] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("Welcome");
 
+  // API Call
   useEffect(() => {
     const apiKey = "e9afe9e234a1e13792df43eca9f930c4";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
@@ -50,9 +52,10 @@ function App() {
     }
   }, [weatherData]);
 
+  // Search is sent from NavBar through onSearch
   const handleSearch = (search) => {
-    console.log("search");
     setCity(search);
+    console.log(`Successfully passed ${search} to API`);
   };
 
   return (

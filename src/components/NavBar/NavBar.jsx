@@ -18,6 +18,7 @@ export default function NavBar({ favorites, onSearch, shadowColor }) {
     setDropdownOpen(false);
   };
 
+    // String input is passed to OnSearch out of NavBar into App for API call
   const searchPressed = (e) => {
     e.preventDefault();
     console.log(search);
@@ -64,5 +65,3 @@ export default function NavBar({ favorites, onSearch, shadowColor }) {
     </nav>
   )
 }
-
-// onClick={searchPressed}

@@ -3,40 +3,42 @@ import React from 'react'
 export default function TermsOfService() {
   return (
 
-    <div>CurrentVue App Terms of Service
+    <div>
+      <h1>CurrentVue App Terms of Service</h1>
         <p>Effective Date: [Date]</p>
 
         <p>Welcome to CurrentVue, a weather application that also provides news updates for specified areas. Please read these terms carefully before using our services.</p>
 
-        <p>Acceptance of Terms
-        By using the CurrentVue app ("the App"), you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use the App.
+        <h2>Acceptance of Terms</h2>
+        <p>By using the CurrentVue app ("the App"), you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use the App.</p>
 
-        Use of Services
-        Content: The App provides weather information and news updates. The content displayed is for informational purposes only, and CurrentVue does not guarantee the accuracy or completeness of the information.
+        <h2>Use of Services</h2>
+        <p>Content: The App provides weather information and news updates. The content displayed is for informational purposes only, and CurrentVue does not guarantee the accuracy or completeness of the information.</p>
 
-        User Conduct: You agree not to engage in any activity that may interfere with or disrupt the functionality of the App. Additionally, you must comply with all applicable laws and regulations.
+        <h2>User Conduct</h2>
+        <p>You agree not to engage in any activity that may interfere with or disrupt the functionality of the App. Additionally, you must comply with all applicable laws and regulations.</p>
 
-        Privacy
-        Our Privacy Policy explains how we collect, use, and protect your information when you use the App. Please review our Privacy Policy [link to Privacy Policy] for more details.
+        <h2>Privacy</h2>
+        <p>Our Privacy Policy explains how we collect, use, and protect your information when you use the App. Please review our Privacy Policy [link to Privacy Policy] for more details.</p>
 
-        Intellectual Property
-        Ownership: The App and its content are owned by CurrentVue. You may not reproduce, distribute, or create derivative works without our express written permission.
+        <h2>Intellectual Property</h2>
+        <p>Ownership: The App and its content are owned by CurrentVue. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
 
-        Trademarks: CurrentVue, the CurrentVue logo, and other marks used within the App are trademarks of CurrentVue. You may not use these trademarks without our prior written consent.
+        <p>Trademarks: CurrentVue, the CurrentVue logo, and other marks used within the App are trademarks of CurrentVue. You may not use these trademarks without our prior written consent.</p>
 
-        Disclaimer of Warranties
-        The App is provided "as is" without any warranties, expressed or implied. CurrentVue disclaims all warranties, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.
+        <h2>Disclaimer of Warranties</h2>
+        <p>The App is provided "as is" without any warranties, expressed or implied. CurrentVue disclaims all warranties, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.</p>
 
-        Limitation of Liability
-        CurrentVue shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.
+        <h2>Limitation of Liability</h2>
+        <p>CurrentVue shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, wheher incurred directly or indirectly.</p>
 
-        Changes to Terms
-        CurrentVue reserves the right to update or modify these Terms of Service at any time. We will notify users of significant changes, but it is your responsibility to regularly review the terms.
+        <h2>Changes to Terms</h2>
+        <p>CurrentVue reserves the right to update or modify these Terms of Service at any time. We will notify users of significant changes, but it is your responsibility to regularly review the terms.</p>
 
-        Contact Information
-        If you have any questions or concerns regarding these Terms of Service, please contact us at [contact@currentvueapp.com].
+        <h2>Contact Information</h2>
+        <p>If you have any questions or concerns regarding these Terms of Service, please contact us at [contact@currentvueapp.com].</p>
 
-        Thank you for using CurrentVue!</p>
+        <p>Thank you for using CurrentVue!</p>
     </div>
   )
 }
