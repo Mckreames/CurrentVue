@@ -19,9 +19,9 @@ function getInitialState() {
 }
 
 function App() {
-  const [city, setCity] = useState("Knoxville");
+  const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState("");
-  const [weatherIcon, setWeatherIcon] = useState("Welcome");
+  const [weatherIcon, setWeatherIcon] = useState("");
 
   // API Call
   useEffect(() => {
@@ -60,13 +60,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <NavBar onSearch={handleSearch} weatherIcon={weatherIcon} />
-      </header>
       <main>
         <Banner weatherIcon={weatherIcon} />
         {/* <Divider /> */}
-        <WeatherSplash weatherData={weatherData} weatherIcon={weatherIcon} />
+        <WeatherSplash
+          weatherData={weatherData}
+          weatherIcon={weatherIcon}
+          onSearch={handleSearch}
+        />
         <Divider />
         <NewsSect />
       </main>

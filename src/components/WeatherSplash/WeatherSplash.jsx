@@ -12,7 +12,7 @@ import WeatherAPI from "../WeatherAPI/WeatherAPI";
 import NavBar from "../NavBar/NavBar";
 
 
-export default function WeatherSplash({ weatherData, weatherIcon }) {
+export default function WeatherSplash({ weatherData, weatherIcon, onSearch }) {
     const [shadowColor, setShadowColor] = useState("lightblue");
     const [error, setError] = useState(null);
     const [favorites, setFavorites] = useState([]);
@@ -81,7 +81,6 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
 
     if (!weatherIcon) {
         weatherIcon = "CurrentVue";
-        weatherData.name = "Welcome";
     }
 
     let addFavorite = () => {
@@ -93,7 +92,7 @@ export default function WeatherSplash({ weatherData, weatherIcon }) {
 
   return (
     <section className="d-flex align-items-center py-3 weather-splash">
-        <NavBar shadowColor={shadowColor} favorites={favorites}/>
+        <NavBar shadowColor={shadowColor} favorites={favorites} onSearch={onSearch} />
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 d-flex align-items-center weather-box" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
