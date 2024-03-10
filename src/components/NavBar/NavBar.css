@@ -28,3 +28,15 @@ nav {
 .nav-link:hover {
   color: goldenrod
 }
+
+.favorite-btn {
+  border: none !important;
+  box-shadow: none !important;
+  width: 6px !important;
+}
+
+.clear {
+  font-size: 15px !important;
+  height: 48px;
+  width: 140px !important;
+}

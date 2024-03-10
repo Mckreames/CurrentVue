@@ -22,6 +22,12 @@ function App() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("");
+  const [favorites, setFavorites] = useState(getInitialState());
+
+  const updateFavorites = (newFavorite) => {
+    setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
+    localStorage.setItem("items", JSON.stringify([...favorites, newFavorite]));
+  };
 
   // API Call
   useEffect(() => {
@@ -39,7 +45,9 @@ function App() {
           setWeatherData(result);
         }
       } catch (error) {
-        console.log("This don't look right, Chief...");
+        console.log(
+          "Let's just act like the error message above doesn't exist... I won't say anything if you don't."
+        );
       }
     };
 
@@ -55,18 +63,19 @@ function App() {
   // Search is sent from NavBar through onSearch
   const handleSearch = (search) => {
     setCity(search);
-    console.log(`Successfully passed ${search} to API`);
   };
 
   return (
     <div className="App">
       <main>
         <Banner weatherIcon={weatherIcon} />
-        {/* <Divider /> */}
         <WeatherSplash
           weatherData={weatherData}
           weatherIcon={weatherIcon}
           onSearch={handleSearch}
+          updateFavorites={updateFavorites}
+          favorites={favorites}
+          setFavorites={setFavorites}
         />
         <Divider />
         <NewsSect />

@@ -12,11 +12,9 @@ import WeatherAPI from "../WeatherAPI/WeatherAPI";
 import NavBar from "../NavBar/NavBar";
 
 
-export default function WeatherSplash({ weatherData, weatherIcon, onSearch }) {
+export default function WeatherSplash({ weatherData, weatherIcon, onSearch, updateFavorites, favorites, setFavorites }) {
     const [shadowColor, setShadowColor] = useState("lightblue");
     const [error, setError] = useState(null);
-    const [favorites, setFavorites] = useState([]);
-
     
     // Box-Shadow Dynamic Color Change
     const handleChangeColor = () => {
@@ -83,16 +81,22 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch }) {
         weatherIcon = "CurrentVue";
     }
 
-    let addFavorite = () => {
-        setFavorites((favorites) => [
-            ...favorites,
-            [weatherData.name, weatherIcon]
-        ])
+    let addFavorite = (favorite) => {
+        const newFavorite = [weatherData.name];
+        // Checking for duplicates
+        const isDuplicate = favorites.some((favorite) => {
+            return favorite[0] === newFavorite[0] && favorite[1] === newFavorite[1];
+        });
+        if (!isDuplicate) {
+            setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
+        } else {
+            console.log('Duplicate found');
+        }
     };
 
   return (
     <section className="d-flex align-items-center py-3 weather-splash">
-        <NavBar shadowColor={shadowColor} favorites={favorites} onSearch={onSearch} />
+        <NavBar shadowColor={shadowColor} favorites={favorites} onSearch={onSearch} updateFavorites={updateFavorites} setFavorites={setFavorites}/>
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
             <div className="col-11 d-flex align-items-center weather-box" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
