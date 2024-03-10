@@ -81,13 +81,13 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
         weatherIcon = "CurrentVue";
     }
 
-    let addFavorite = (favorite) => {
+    let addFavorite = () => {
         const newFavorite = [weatherData.name];
         // Checking for duplicates
         const isDuplicate = favorites.some((favorite) => {
             return favorite[0] === newFavorite[0] && favorite[1] === newFavorite[1];
         });
-        if (!isDuplicate) {
+        if (!isDuplicate && favorites !== "") {
             setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
         } else {
             console.log('Duplicate found');
@@ -95,7 +95,7 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
     };
 
   return (
-    <section className="d-flex align-items-center py-3 weather-splash">
+    <section className="d-flex flex-column flex-md-row align-items-center h-100 py-3 weather-splash">
         <NavBar shadowColor={shadowColor} favorites={favorites} onSearch={onSearch} updateFavorites={updateFavorites} setFavorites={setFavorites}/>
         <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
@@ -107,21 +107,21 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
                 />
             </div>
         </div>
-        <div className="d-flex flex-wrap flex-column align-items-center justify-content-center offset-1 col col-xl-3 summary-box" style={{ boxShadow: `0px 0px 15px ${shadowColor}` }}>
-        <div>
-      {error ? (
-        <div>Error: {error}</div>
-      ) : (
-        weatherData && (
-          <div>
-            <h1>{weatherData.name}</h1>
-            <p>Temperature: {fahrenheit()} &deg;F</p>
-            <p>Humidity: {weatherData.main.humidity}%</p>
-            <p>Weather: {weatherData.weather[0]?.description}</p>
-          </div>
-        )
-      )}
-    </div>
+        <div className="d-flex flex-column align-items-center justify-content-center offset-1 mt-5 col col-xl-3 summary-box" style={{ boxShadow: `0px 0px 15px ${shadowColor}` }}>
+            <div>
+                {error ? (
+                    <div>Error: {error}</div>
+                ) : (
+                    weatherData && (
+                    <div>
+                        <h1>{weatherData.name}</h1>
+                        <p>Temperature: {fahrenheit()} &deg;F</p>
+                        <p>Humidity: {weatherData.main.humidity}%</p>
+                        <p>Weather: {weatherData.weather[0]?.description}</p>
+                    </div>
+                    )
+                )}
+            </div>
             <div className="d-flex flex-wrap justify-content-center">
                 <button className="btn col" onClick={addFavorite}>Save to Favorites</button>
             </div>

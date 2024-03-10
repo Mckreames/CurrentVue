@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, } from 'reactstrap';
 
 import logo from '../../imgs/currentvue-favicon-color.png';
 
@@ -22,10 +22,10 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
   };
 
   const handleDeleteFavorite = (index) => {
-    debugger
     const newFavorites = favorites.filter((_, i) => i !==index);
     updateFavorites(newFavorites);
-    console.log(favorites)
+    // setFavorites(newFavorites);
+    console.log(newFavorites);
   }
 
   const handleClearLocalStorage = () => {
@@ -40,11 +40,11 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
+    <nav className="navbar d-flex navbar-expand-xl bg-body-tertiary fixed-top" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
       <div className="container-fluid">
-        <ul className="me-auto d-flex align-items-center">
+        <ul className="me-auto d-flex flex-wrap flex-md-nowrap align-items-center">
           <li>
-            <a className="navbar-brand offset-1" href="#top">
+            <a className="navbar-brand offset-md-1" href="#top">
               <img src={logo} className="App-logo" alt="logo" />
               CurrentVue
             </a>
