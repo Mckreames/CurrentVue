@@ -1,5 +1,5 @@
 .background-color {
-    background-color: lightgray;
+    background-color: rgba(60, 145, 151, 0.144);
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.315) inset;
 }
   
@@ -9,7 +9,7 @@
     box-shadow: 2px 2px 8px grey;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(241, 241, 241);
   
 }
 
@@ -22,6 +22,10 @@
     height: 40%;
     margin: 0;
     border-bottom: 2px solid black;
+}
+
+.news-head > a:hover {
+    color: #ffc05f !important;
 }
 
 .d {
