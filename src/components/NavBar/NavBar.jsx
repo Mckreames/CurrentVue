@@ -8,6 +8,7 @@ import "./NavBar.css";
 export default function NavBar({ onSearch, shadowColor, updateFavorites, favorites, setFavorites }) {
   const [search, setSearch] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -40,45 +41,85 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
   }
 
   return (
-    <nav className="navbar d-flex navbar-expand-xl bg-body-tertiary fixed-top" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
-      <div className="container-fluid">
-        <ul className="me-auto d-flex flex-wrap flex-md-nowrap align-items-center">
-          <li>
-            <a className="navbar-brand offset-md-1" href="#top">
-              <img src={logo} className="App-logo" alt="logo" />
-              CurrentVue
-            </a>
-          </li>
-          <li className="nav-item offset-1 dropdown">
-          <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-              <DropdownToggle caret className="w-100" style={{ backgroundColor: 'white', color: 'black' }}>
-                Saved Locations
-              </DropdownToggle>
-              <DropdownMenu>
-                {favorites.map((favorites, index) => (
-                  <div key={index} className="d-flex justify-content-between align-items-center">
-                    <DropdownItem key={index}>
-                      <span onClick={() => handleSavedLocationClick(favorites[0])}>
+    <Navbar expand="lg" className="navbar-expand-xl bg-body-tertiary fixed-top" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
+      <div className="d-flex flex-column flex-lg-row align-items-center container-fluid">
+          <NavbarBrand className="offset-none offset-xl-1" href="#top">
+            <img src={logo} className="App-logo" alt="logo" />
+            CurrentVue&deg;
+          </NavbarBrand>
+      <NavbarToggler onClick={() => setCollapsed(!collapsed)} className="d-lg-none" />
+        <Collapse isOpen={!collapsed} navbar>
+
+          <UncontrolledDropdown nav inNavbar className="no-dot">
+            <DropdownToggle caret className="" style={{ backgroundColor: 'white', color: 'black' }}>
+              Saved Locations
+            </DropdownToggle>
+            <DropdownMenu>
+              {favorites.map((favorites, index) => (
+                <div key={index} className="d-flex justify-content-between align-items-center">
+                  <DropdownItem key={index}>
+                    <span onClick={() => handleSavedLocationClick(favorites[0])}>
                       {favorites[0]}
-                      </span>
-                      <button className="btn btn-link favorite-btn" onClick={() => handleDeleteFavorite(index)}>X</button>
-                    </DropdownItem>
-                  </div>
-                ))}
-              </DropdownMenu>
-            </Dropdown>
-          </li>
-          <li>
+                    </span>
+                    <button className="btn btn-link favorite-btn" onClick={() => handleDeleteFavorite(index)}>X</button>
+                  </DropdownItem>
+                </div>
+              ))}
+            </DropdownMenu>
+          </UncontrolledDropdown>
+
           <button className="btn btn-link w-50 clear" onClick={handleClearLocalStorage}>Clear-Favorites</button>
-          </li>
-        </ul>
-          <form className="input-group w-25 me-5" onSubmit={searchPressed} role="search">
-            <input className="form-control" type="text" placeholder="Enter A City..." aria-label="Search" onChange={(e) => setSearch(e.target.value)}
-            />
-            <button className="btn btn-outline-success" type='submit'>Search</button>
-          </form>
-          <div className="offset-1"></div>
+
+          <Nav className="d-flex flex-wrap flex-md-nowrap ms-auto me-5 align-items-center">
+            <form className="input-group" onSubmit={searchPressed} role="search">
+              <input className="form-control" type="text" placeholder="Enter A City..." aria-label="Search" onChange={(e) => setSearch(e.target.value)} />
+              <button className="btn btn-outline-success" type='submit'>Search</button>
+            </form>
+            <div className="d-none d-lg-block offset-1"></div>
+          </Nav>
+        </Collapse>
       </div>
-    </nav>
+    </Navbar>
+
+    // <nav className="navbar d-flex navbar-expand-xl bg-body-tertiary fixed-top" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
+    //   <div className="container-fluid">
+    //     <ul className="me-auto d-flex flex-wrap flex-md-nowrap align-items-center">
+    //       <li>
+    //         <a className="navbar-brand offset-md-1" href="#top">
+    //           <img src={logo} className="App-logo" alt="logo" />
+    //           CurrentVue
+    //         </a>
+    //       </li>
+    //       <li className="nav-item offset-1 dropdown">
+    //         <Dropdown className="d-none d-md-flex" isOpen={dropdownOpen} toggle={toggleDropdown}>
+    //           <DropdownToggle caret className="w-100" style={{ backgroundColor: 'white', color: 'black' }}>
+    //             Saved Locations
+    //           </DropdownToggle>
+    //           <DropdownMenu>
+    //             {favorites.map((favorites, index) => (
+    //               <div key={index} className="d-flex justify-content-between align-items-center">
+    //                 <DropdownItem key={index}>
+    //                   <span onClick={() => handleSavedLocationClick(favorites[0])}>
+    //                   {favorites[0]}
+    //                   </span>
+    //                   <button className="btn btn-link favorite-btn" onClick={() => handleDeleteFavorite(index)}>X</button>
+    //                 </DropdownItem>
+    //               </div>
+    //             ))}
+    //           </DropdownMenu>
+    //         </Dropdown>
+    //       </li>
+    //       <li>
+    //       <button className="btn btn-link w-50 clear" onClick={handleClearLocalStorage}>Clear-Favorites</button>
+    //       </li>
+    //     </ul>
+    //       <form className="input-group w-25 me-5" onSubmit={searchPressed} role="search">
+    //         <input className="form-control" type="text" placeholder="Enter A City..." aria-label="Search" onChange={(e) => setSearch(e.target.value)}
+    //         />
+    //         <button className="btn btn-outline-success" type='submit'>Search</button>
+    //       </form>
+    //       <div className="offset-1"></div>
+    //   </div>
+    // </nav>
   )
 }

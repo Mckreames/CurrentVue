@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="container-fluid d-flex flex-column justify-content-center align-items-center text-align-center toer">
         <p>All Right Reserved</p>
         <p>By continuing to use this site, you agree to the 
-          <a href="https://www.pornhub.com/channels/dream-tranny"> Terms of Service</a>
+          <a href="#"> Terms of Service</a>
         </p>
     </div>
   )

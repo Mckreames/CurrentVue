@@ -9,7 +9,7 @@
 .weather-at-a-glance {
     height: 450px;
     border-radius: 10px;
-    margin-right: -40px;
+    /* margin-right: -40px; */
 }
 
 .app-logo {

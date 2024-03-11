@@ -15,7 +15,7 @@ function getInitialState() {
   if (typeof savedState === "string" && savedState !== "") {
     return JSON.parse(savedState);
   }
-  return "";
+  return [];
 }
 
 function App() {

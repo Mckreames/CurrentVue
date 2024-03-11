@@ -107,7 +107,7 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
                 />
             </div>
         </div>
-        <div className="d-flex flex-column align-items-center justify-content-center offset-1 mt-5 col col-xl-3 summary-box" style={{ boxShadow: `0px 0px 15px ${shadowColor}` }}>
+        <div className="d-flex flex-column offset-0 offset-md-1 align-items-center justify-content-center mt-5 col col-xl-3 summary-box" style={{ boxShadow: `0px 0px 15px ${shadowColor}` }}>
             <div>
                 {error ? (
                     <div>Error: {error}</div>
