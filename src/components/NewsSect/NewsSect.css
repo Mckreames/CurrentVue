@@ -3,8 +3,12 @@
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.315) inset;
 }
   
+.story-container {
+    padding-right: 0;
+}
+
 .story {
-    margin: 20px;
+    /* margin: auto; */
     height: 350px;
     box-shadow: 2px 2px 8px grey;
     border: 1px solid black;
