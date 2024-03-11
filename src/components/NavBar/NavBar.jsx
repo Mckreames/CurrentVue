@@ -24,7 +24,7 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
   const handleDeleteFavorite = (index) => {
     const newFavorites = favorites.filter((_, i) => i !==index);
     updateFavorites(newFavorites);
-    // setFavorites(newFavorites);
+    setFavorites(newFavorites);
     console.log(newFavorites);
   }
 
@@ -51,7 +51,7 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
           </li>
           <li className="nav-item offset-1 dropdown">
           <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-              <DropdownToggle caret style={{ backgroundColor: 'white', color: 'black' }}>
+              <DropdownToggle caret className="w-100" style={{ backgroundColor: 'white', color: 'black' }}>
                 Saved Locations
               </DropdownToggle>
               <DropdownMenu>
@@ -69,7 +69,7 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
             </Dropdown>
           </li>
           <li>
-          <button className="btn btn-link clear" onClick={handleClearLocalStorage}>Clear-Favorites</button>
+          <button className="btn btn-link w-50 clear" onClick={handleClearLocalStorage}>Clear-Favorites</button>
           </li>
         </ul>
           <form className="input-group w-25 me-5" onSubmit={searchPressed} role="search">

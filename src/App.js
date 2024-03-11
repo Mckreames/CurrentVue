@@ -13,6 +13,7 @@ import "./App.css";
 function getInitialState() {
   let savedState = localStorage.getItem("items");
   if (typeof savedState === "string") {
+    console.log(JSON.parse(savedState));
     return JSON.parse(savedState);
   }
   return [];
