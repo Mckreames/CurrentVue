@@ -26,7 +26,6 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
     const newFavorites = favorites.filter((_, i) => i !==index);
     updateFavorites(newFavorites);
     setFavorites(newFavorites);
-    console.log(newFavorites);
   }
 
   const handleClearLocalStorage = () => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Alert } from 'reactstrap';
 import "./WeatherSplash.css";
 import Logo from "../../imgs/currentvue-high-resolution-logo-transparent.png"
 import Rain from "../../imgs/clipart_inferiors/rain.png";
@@ -90,16 +91,17 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
         if (!isDuplicate && favorites !== "") {
             setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
         } else {
-            console.log('Duplicate found');
+            // <Alert color="primary">You have great taste! That one is already a favorite!</Alert>
+            // console.log('Duplicate found!')
         }
     };
 
   return (
     <section className="d-flex flex-column flex-md-row align-items-center h-100 py-3 weather-splash">
         <NavBar shadowColor={shadowColor} favorites={favorites} onSearch={onSearch} updateFavorites={updateFavorites} setFavorites={setFavorites}/>
-        <div className="text-align-center offset-1 col col-xl-6 weather-at-a-glance">
+        <div className="text-align-center offset-0 offset-lg-1 col col-xl-6 weather-at-a-glance">
             <h2 className="row col-12 justify-content-center">Outside Your Window</h2>
-            <div className="col-11 d-flex align-items-center weather-box" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
+            <div className="col col-lg-11 d-flex align-items-center weather-box" style={{ boxShadow: `5px 5px 8px ${shadowColor}` }}>
                 <img
                     src={weatherOptions[weatherIcon]}
                     className="weather-img"
