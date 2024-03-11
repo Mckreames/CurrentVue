@@ -12,11 +12,10 @@ import "./App.css";
 // Local State
 function getInitialState() {
   let savedState = localStorage.getItem("items");
-  if (typeof savedState === "string") {
-    console.log(JSON.parse(savedState));
+  if (typeof savedState === "string" && savedState !== "") {
     return JSON.parse(savedState);
   }
-  return [];
+  return "";
 }
 
 function App() {
