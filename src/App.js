@@ -44,11 +44,7 @@ function App() {
           const result = await response.json();
           setWeatherData(result);
         }
-      } catch (error) {
-        console.log(
-          "Let's just act like the error message above doesn't exist... I won't say anything if you don't."
-        );
-      }
+      } catch (error) {}
     };
 
     fetchData();

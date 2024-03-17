@@ -15,7 +15,6 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
   };
 
   const handleSavedLocationClick = (location) => {
-    console.log(favorites)
     onSearch(location);
     setDropdownOpen(false);
     // const newFavorite = [location, ""];
@@ -23,7 +22,8 @@ export default function NavBar({ onSearch, shadowColor, updateFavorites, favorit
   };
 
   const handleDeleteFavorite = (index) => {
-    const newFavorites = favorites.filter((_, i) => i !==index);
+    debugger
+    const newFavorites = favorites.filter((_, i) => i !== index);
     updateFavorites(newFavorites);
     setFavorites(newFavorites);
   }
