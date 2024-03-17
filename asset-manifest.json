@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/mckreames/CurrentVue/static/css/main.c29852d0.css",
-    "main.js": "/mckreames/CurrentVue/static/js/main.69a04cb4.js",
-    "static/media/rain.png": "/mckreames/CurrentVue/static/media/rain.d29120dd888216718b11.png",
-    "static/media/thunder.png": "/mckreames/CurrentVue/static/media/thunder.ebb143a04f42cc8d7da4.png",
-    "static/media/snow.png": "/mckreames/CurrentVue/static/media/snow.38aa432911fda8b7a128.png",
-    "static/media/sun.png": "/mckreames/CurrentVue/static/media/sun.e4e8843de892576a7341.png",
-    "static/media/currentvue-high-resolution-logo-transparent.png": "/mckreames/CurrentVue/static/media/currentvue-high-resolution-logo-transparent.da3e41e45a03df79ff23.png",
-    "static/media/cloudy.png": "/mckreames/CurrentVue/static/media/cloudy.3654037565f73a14f6ee.png",
-    "static/media/mist.png": "/mckreames/CurrentVue/static/media/mist.a35be6ce981aad240abe.png",
-    "index.html": "/mckreames/CurrentVue/index.html",
-    "main.c29852d0.css.map": "/mckreames/CurrentVue/static/css/main.c29852d0.css.map",
-    "main.69a04cb4.js.map": "/mckreames/CurrentVue/static/js/main.69a04cb4.js.map"
+    "main.css": "/Mckreames/CurrentVue/static/css/main.bd42e789.css",
+    "main.js": "/Mckreames/CurrentVue/static/js/main.ea39a972.js",
+    "static/media/rain.png": "/Mckreames/CurrentVue/static/media/rain.d29120dd888216718b11.png",
+    "static/media/thunder.png": "/Mckreames/CurrentVue/static/media/thunder.ebb143a04f42cc8d7da4.png",
+    "static/media/snow.png": "/Mckreames/CurrentVue/static/media/snow.38aa432911fda8b7a128.png",
+    "static/media/sun.png": "/Mckreames/CurrentVue/static/media/sun.e4e8843de892576a7341.png",
+    "static/media/currentvue-high-resolution-logo-transparent.png": "/Mckreames/CurrentVue/static/media/currentvue-high-resolution-logo-transparent.da3e41e45a03df79ff23.png",
+    "static/media/cloudy.png": "/Mckreames/CurrentVue/static/media/cloudy.3654037565f73a14f6ee.png",
+    "static/media/mist.png": "/Mckreames/CurrentVue/static/media/mist.a35be6ce981aad240abe.png",
+    "index.html": "/Mckreames/CurrentVue/index.html",
+    "main.bd42e789.css.map": "/Mckreames/CurrentVue/static/css/main.bd42e789.css.map",
+    "main.ea39a972.js.map": "/Mckreames/CurrentVue/static/js/main.ea39a972.js.map"
   },
   "entrypoints": [
-    "static/css/main.c29852d0.css",
-    "static/js/main.69a04cb4.js"
+    "static/css/main.bd42e789.css",
+    "static/js/main.ea39a972.js"
   ]
 }
