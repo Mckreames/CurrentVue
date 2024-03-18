@@ -33,18 +33,27 @@ function App() {
     const apiKey = "e9afe9e234a1e13792df43eca9f930c4";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
+    let i = 0;
+
     const fetchData = async () => {
       try {
+        if (city.trim() === "" && i === 0) {
+          i++;
+          return;
+        } else {
+          alert("Search for a valid location!");
+          return;
+        }
         const response = await fetch(apiUrl);
-
         if (!response.ok) {
-          throw "Search for a valid location";
+          throw new Error("Search for a valid location");
         } else {
           const result = await response.json();
-          console.log(result);
           setWeatherData(result);
         }
-      } catch (error) {}
+      } catch (error) {
+        console.error;
+      }
     };
 
     fetchData();

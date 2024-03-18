@@ -82,7 +82,7 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
     }
 
     let addFavorite = () => {
-        if (weatherData.name !== "" && weatherData.name !== " ") {
+        if (weatherData.name !== undefined && weatherData.name.trim() !== "") {
             const newFavorite = [weatherData.name];
             // Checking for duplicates
             const isDuplicate = favorites.some((favorite) => {
@@ -92,12 +92,9 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
                 setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
             } else {
                 <Alert color="primary">You have great taste! That one is already a favorite!</Alert>
-                // console.log('Duplicate found!')
             }
         }
     };
-
-    console.log(weatherData, typeof weatherData);
 
   return (
     <section className="d-flex flex-column flex-md-row align-items-center h-100 py-3 weather-splash">
