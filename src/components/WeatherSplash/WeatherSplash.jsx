@@ -82,7 +82,7 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
     }
 
     let addFavorite = () => {
-        if (weatherData.name !== "") {
+        if (weatherData.name !== "" && weatherData.name !== " ") {
             const newFavorite = [weatherData.name];
             // Checking for duplicates
             const isDuplicate = favorites.some((favorite) => {
@@ -91,7 +91,7 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
             if (!isDuplicate && favorites !== "") {
                 setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
             } else {
-                // <Alert color="primary">You have great taste! That one is already a favorite!</Alert>
+                <Alert color="primary">You have great taste! That one is already a favorite!</Alert>
                 // console.log('Duplicate found!')
             }
         }
