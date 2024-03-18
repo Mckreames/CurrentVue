@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/mckreames/CurrentVue/static/css/main.c29852d0.css",
-    "main.js": "/mckreames/CurrentVue/static/js/main.9b02af5f.js",
-    "static/media/rain.png": "/mckreames/CurrentVue/static/media/rain.d29120dd888216718b11.png",
-    "static/media/thunder.png": "/mckreames/CurrentVue/static/media/thunder.ebb143a04f42cc8d7da4.png",
-    "static/media/snow.png": "/mckreames/CurrentVue/static/media/snow.38aa432911fda8b7a128.png",
-    "static/media/sun.png": "/mckreames/CurrentVue/static/media/sun.e4e8843de892576a7341.png",
-    "static/media/currentvue-high-resolution-logo-transparent.png": "/mckreames/CurrentVue/static/media/currentvue-high-resolution-logo-transparent.da3e41e45a03df79ff23.png",
-    "static/media/cloudy.png": "/mckreames/CurrentVue/static/media/cloudy.3654037565f73a14f6ee.png",
-    "static/media/mist.png": "/mckreames/CurrentVue/static/media/mist.a35be6ce981aad240abe.png",
-    "index.html": "/mckreames/CurrentVue/index.html",
-    "main.c29852d0.css.map": "/mckreames/CurrentVue/static/css/main.c29852d0.css.map",
-    "main.9b02af5f.js.map": "/mckreames/CurrentVue/static/js/main.9b02af5f.js.map"
+    "main.css": "/CurrentVue/static/css/main.c29852d0.css",
+    "main.js": "/CurrentVue/static/js/main.fb4a5caf.js",
+    "static/media/rain.png": "/CurrentVue/static/media/rain.d29120dd888216718b11.png",
+    "static/media/thunder.png": "/CurrentVue/static/media/thunder.ebb143a04f42cc8d7da4.png",
+    "static/media/snow.png": "/CurrentVue/static/media/snow.38aa432911fda8b7a128.png",
+    "static/media/sun.png": "/CurrentVue/static/media/sun.e4e8843de892576a7341.png",
+    "static/media/currentvue-high-resolution-logo-transparent.png": "/CurrentVue/static/media/currentvue-high-resolution-logo-transparent.da3e41e45a03df79ff23.png",
+    "static/media/cloudy.png": "/CurrentVue/static/media/cloudy.3654037565f73a14f6ee.png",
+    "static/media/mist.png": "/CurrentVue/static/media/mist.a35be6ce981aad240abe.png",
+    "index.html": "/CurrentVue/index.html",
+    "main.c29852d0.css.map": "/CurrentVue/static/css/main.c29852d0.css.map",
+    "main.fb4a5caf.js.map": "/CurrentVue/static/js/main.fb4a5caf.js.map"
   },
   "entrypoints": [
     "static/css/main.c29852d0.css",
-    "static/js/main.9b02af5f.js"
+    "static/js/main.fb4a5caf.js"
   ]
 }
