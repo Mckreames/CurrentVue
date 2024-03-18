@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Alert } from 'reactstrap';
 import "./WeatherSplash.css";
-import Logo from "../../imgs/currentvue-high-resolution-logo-transparent.png"
 import Rain from "../../imgs/clipart_inferiors/rain.png";
 import Clear from "../../imgs/clipart_inferiors/sun.png";
 import Clouds from "../../imgs/clipart_inferiors/cloudy.png";
@@ -9,14 +7,12 @@ import Snow from "../../imgs/clipart_inferiors/snow.png";
 import Thunderstorm from "../../imgs/clipart_inferiors/thunder.png";
 import Mist from "../../imgs/clipart_inferiors/mist.png";
 import CurrentVue from "../../imgs/currentvue-high-resolution-logo-transparent.png";
-import WeatherAPI from "../WeatherAPI/WeatherAPI";
 import NavBar from "../NavBar/NavBar";
 
 
 export default function WeatherSplash({ weatherData, weatherIcon, onSearch, updateFavorites, favorites, setFavorites }) {
     const [shadowColor, setShadowColor] = useState("lightblue");
-    const [error, setError] = useState(null);
-    
+
     // Box-Shadow Dynamic Color Change
     const handleChangeColor = () => {
         if (weatherIcon === "Rain" || weatherIcon === "Drizzle") {
@@ -72,7 +68,10 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
     }
 
     let fahrenheit = () => {
-        let kelvin = weatherData.main.temp;
+        let kelvin = weatherData?.main?.temp;
+        if (typeof kelvin ===  "undefined") {
+            return "--"
+        }
         let celciusTemp = kelvin - 273.15;
         let fahrenheitTemp = ((celciusTemp * 9 / 5) + 32).toFixed(1);
         return fahrenheitTemp;
@@ -98,6 +97,8 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
         }
     };
 
+    console.log(weatherData, typeof weatherData);
+
   return (
     <section className="d-flex flex-column flex-md-row align-items-center h-100 py-3 weather-splash">
         <NavBar shadowColor={shadowColor} favorites={favorites} onSearch={onSearch} updateFavorites={updateFavorites} setFavorites={setFavorites}/>
@@ -113,18 +114,16 @@ export default function WeatherSplash({ weatherData, weatherIcon, onSearch, upda
         </div>
         <div className="d-flex flex-column offset-0 offset-md-1 align-items-center justify-content-center mt-5 col col-xl-3 summary-box" style={{ boxShadow: `0px 0px 15px ${shadowColor}` }}>
             <div>
-                {error ? (
-                    <div>Error: {error}</div>
-                ) : (
-                    weatherData && (
+                {
+                    typeof weatherData === 'object' && (
                     <div>
                         <h1>{weatherData.name}</h1>
                         <p>Temperature: {fahrenheit()} &deg;F</p>
-                        <p>Humidity: {weatherData.main.humidity}%</p>
-                        <p>Weather: {weatherData.weather[0]?.description}</p>
+                        <p>Humidity: {weatherData?.main?.humidity}%</p>
+                        <p>Weather: {weatherData?.weather[0]?.description}</p>
                     </div>
                     )
-                )}
+                }
             </div>
             <div className="d-flex flex-wrap justify-content-center">
                 <button className="btn col" onClick={addFavorite}>Save to Favorites</button>

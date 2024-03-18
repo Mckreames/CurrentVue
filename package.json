@@ -1,6 +1,6 @@
 {
-  "name": "flavor_forge",
-  "homepage": "https://github.com/Mckreames/CurrentVue",
+  "name": "currentvue",
+  "homepage": "https://github.com/mckreames/CurrentVue",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,12 +26,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

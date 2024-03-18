@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import logo from "./imgs/currentvue-favicon-color.png";
-import NavBar from "./components/NavBar/NavBar";
 import Banner from "./components/Banner/Banner";
 import WeatherSplash from "./components/WeatherSplash/WeatherSplash";
-import Logo from "./imgs/currentvue-high-resolution-logo-transparent.png";
 import Divider from "./components/Divider/Divider";
 import NewsSect from "./components/NewsSect/NewsSect";
 import Footer from "./components/Footer/Footer";
@@ -20,7 +17,9 @@ function getInitialState() {
 
 function App() {
   const [city, setCity] = useState("");
-  const [weatherData, setWeatherData] = useState("");
+  const [weatherData, setWeatherData] = useState({
+    weather: [],
+  });
   const [weatherIcon, setWeatherIcon] = useState("");
   const [favorites, setFavorites] = useState(getInitialState());
 
@@ -42,6 +41,7 @@ function App() {
           throw "Search for a valid location";
         } else {
           const result = await response.json();
+          console.log(result);
           setWeatherData(result);
         }
       } catch (error) {
