@@ -33,15 +33,9 @@ function App() {
     const apiKey = "e9afe9e234a1e13792df43eca9f930c4";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
-    let i = 0;
-
     const fetchData = async () => {
       try {
-        if (city.trim() === "" && i === 0) {
-          i++;
-          return;
-        } else {
-          alert("Search for a valid location!");
+        if (city.trim() === "") {
           return;
         }
         const response = await fetch(apiUrl);
