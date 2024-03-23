@@ -3,6 +3,7 @@ import Banner from "./components/Banner/Banner";
 import WeatherSplash from "./components/WeatherSplash/WeatherSplash";
 import Divider from "./components/Divider/Divider";
 import NewsSect from "./components/NewsSect/NewsSect";
+import TermsOfService from "./components/TermsOfService/TermsOfService";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
@@ -78,6 +79,7 @@ function App() {
         />
         <Divider />
         <NewsSect />
+        <TermsOfService />
       </main>
       <Footer />
     </div>

@@ -1,0 +1,13 @@
+
+.terms-page {
+    background-color: rgb(63, 62, 62) !important;
+}
+
+.terms-link {
+    cursor: pointer !important;
+    color: white;
+}
+
+.terms-link:hover {
+    color: lightblue !important;
+}
